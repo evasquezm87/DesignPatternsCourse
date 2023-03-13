@@ -1,0 +1,42 @@
+Notas curso patrones diseño C#
+
+Tipos:
+-Creacionales
+-Comportamiento
+-Estructurales
+
+POO Repaso
+Clase es el molde de un objeto
+
+Herencia
+Cuando una clase tiene un hijo, la clase hijo hereda atributos y comportamientos del padre
+
+Clase abstracta
+Sirve para especificar funcionamiento y propiedades. No crea objetos
+Se crea usando la palabra reservada abstract
+
+public abstract class Person()
+
+No se puede crear un objeto de esta clase
+Si se escribe
+Person myPerson = new Person()
+Marca error ya que al ser abstract no permite
+
+Generar una estructura como base, no como funcionamiento
+Para que clases hijas hereden ese funcionamiento
+
+Para crear un objeto de esta clase se tiene que crear una clase hija, esta clase hija si podra llamarse para crear un objeto
+
+Interfaz
+Sirve para evitar el problema que existe con la herencia, ya que solo se puede heredar de un elemento
+
+Es la base de lo patrones de diseño, junto con las clases abstractas
+
+Para heredar de mas de un elemento se usa la interfaz
+
+Sirve para dar un mecanismo para categorización, puede estar en N categorias,
+
+Se llama implementar interfaz, es decir que se le va a dar funcionamiento
+
+Es un contrato, cuando se implementa se tiene qque cumpli con las propiedades y elementos que tiene la interfaz
+
