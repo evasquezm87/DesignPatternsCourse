@@ -38,5 +38,14 @@ Sirve para dar un mecanismo para categorización, puede estar en N categorias,
 
 Se llama implementar interfaz, es decir que se le va a dar funcionamiento
 
-Es un contrato, cuando se implementa se tiene qque cumpli con las propiedades y elementos que tiene la interfaz
+Es un contrato, cuando se implementa se tiene que cumplir con las propiedades y elementos que tiene la interfaz
 
+en una interfaz normalmente solo ira el nombre de los metodos que se requieran, cuando se implemente una interfaz
+se tienen que poner a fuerza el o los metodos de la interfaz
+
+Por convencion en C# las interfaces se llaman usando la "I" mayuscula seguido del nombre, ejemplo
+IMiInterfaz
+
+Singleton
+Tipo Creacional, 
+Para crear objetos
