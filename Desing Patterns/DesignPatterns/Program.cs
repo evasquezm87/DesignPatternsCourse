@@ -40,7 +40,7 @@ namespace DesignPatterns
             IDetalle banorte1 = banorte.GetDetail();
             for (int i = 0; i < 5; i++)
             {
-                bbva1.FillDetail("header1", "Detalle Banorte linea " + i, "Summary 1");
+                banorte1.FillDetail("header1", "Detalle Banorte linea " + i, "Summary 1");
             }
 
         }
