@@ -12,6 +12,12 @@ namespace DesignPatterns.FactoryPattern
         public abstract ISale GetSale();
     }
 
+    //Product, Interfaz, sirve para categorizar la fabrica
+    public interface ISale
+    {
+        void Sell(decimal total);
+    }
+
     //Concrete Creator
     //Fabrica que crea el objeto, es quien tiene la respobilidad de la creación, 
     //es la unica que se utilizara en el programa al llamarla
@@ -65,11 +71,7 @@ namespace DesignPatterns.FactoryPattern
     }
 
    
-    //Product, Interfaz, sirve para categorizar la fabrica
-    public interface ISale 
-    {
-        void Sell(decimal total);
-    }
+
 
  
 }

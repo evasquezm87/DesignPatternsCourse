@@ -3,6 +3,7 @@ using DesignPatterns.Singleton;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -14,12 +15,35 @@ namespace DesignPatterns
         {
             //singleton();
             Fabric();
+            FabricBancos();
             Console.ReadLine();
 
 
           
         }
 
+        static void FabricBancos()
+        {
+            ContenidoDetalleFactory santander = new SantanderDetalle("014");
+            ContenidoDetalleFactory bbva = new BBVADetalle("012");
+            ContenidoDetalleFactory banorte = new BanorteDetalle("072");
+
+            IDetalle santander1 = santander.GetDetail();
+            santander1.FillDetail("header1", "Detalle Santander", "Summary 1");
+
+            IDetalle bbva1 = bbva.GetDetail();
+            for(int i = 0; i < 10; i++)
+            {
+                bbva1.FillDetail("header1", "Detalle BBVA linea " + i, "Summary 1");
+            }
+
+            IDetalle banorte1 = banorte.GetDetail();
+            for (int i = 0; i < 5; i++)
+            {
+                bbva1.FillDetail("header1", "Detalle Banorte linea " + i, "Summary 1");
+            }
+
+        }
         static void Fabric()
         {
             //Fabric
