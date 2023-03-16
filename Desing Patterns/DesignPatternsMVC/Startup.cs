@@ -25,7 +25,9 @@ namespace DesignPatternsMVC
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
-            //services.Configure<MyConfig>(Configure);
+            //Inyección de dependencias, obtener valores del config para ser utilizado en el proyecto
+            //Inyeccción de un objeto para poder ser utilizado en cualquier controlador
+            services.Configure<MyConfig>(Configuration.GetSection("MyConfig"));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

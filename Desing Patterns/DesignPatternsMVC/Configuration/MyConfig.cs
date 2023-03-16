@@ -2,6 +2,6 @@
 {
     public class MyConfig
     {
-        public string PathLog { get; set; } //va a ser la represntacion del archivo inde
+        public string PathLog { get; set; } //va a ser la representacion del archivo 
     }
 }

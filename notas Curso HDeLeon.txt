@@ -49,3 +49,27 @@ IMiInterfaz
 Singleton
 Tipo Creacional, 
 Para crear objetos
+
+Solamente existe un solo objeto en la aplicacion
+razones:
+-Complejo d ecrear
+-conexino a un tercero que solo permite un objeto
+-pull d econexiones que no requiere estar creando varias conexiones
+
+
+Factory Method
+
+Tipo creacional
+Fabrica creadora de objetos
+
+Se requiere de una clase abstracta
+
+Participantes:
+Creator .- Clase Abstracta que heredaran clases de esta
+ConcreteCreator.- Clase que hereda de Creator y que es la que crera los productos, es la que tiene la responsabilidad de la creación
+Product.- Interfaz que va a categorizar los productos que se van a crear
+ConcreteProducto.- Es la clase que crea los objetos, es la que se va a utilizar en el
+
+Ventajas, 
+la responsabilidad de la crecion del objeto va a estar en la fabrica, solamente en un lado se crea el objeto, en caso de un cambio solo se cambia ahi
+se puede tener objetos parecidos que se categorizan en la interfaz product

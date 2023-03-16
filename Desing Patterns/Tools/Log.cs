@@ -8,7 +8,10 @@ namespace Tools
     {
         private static Log _instance = null; //Una vez compilado el proyecto se crea el objeto
         private string _path;
-        public string Path; //Para acceder a la variable
+        //Para trabajar con concurrencia(multihilos), en caso de que esten 2 hilos entren
+        //y generen los 2 una instancia cada quien, de esta manera proteger que solo se cree una
+        private static object _protected = new object();
+
 
         //Validar que no se pueda crear otro objeto de la clase
         //Crear un constructor privado, para que no se pueda crear desde otra parte??
@@ -20,9 +23,12 @@ namespace Tools
         //Metodo para acceder al objeto
         public static Log GetInstance(string path)
         {
-            if (_instance == null) //Si al llamar el objeto es null entonces crea el objeto
+            lock (_protected)//Mientras esta un hilo trabajando no puede otro hilo trabajar con esto, ya que lo protege
             {
-                _instance = new Log(path);//Crea el objeto con el parametro enviado
+                if (_instance == null) //Si al llamar el objeto es null entonces crea el objeto
+                {
+                    _instance = new Log(path);//Crea el objeto con el parametro enviado
+                }
             }
 
             return _instance;//regresa la instancia del objeto
