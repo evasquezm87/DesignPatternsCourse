@@ -1,4 +1,4 @@
-﻿namespace DesignPatternsMVC.Configuration
+﻿namespace DesignPatternsASP.Configuration
 {
     public class MyConfig
     {
