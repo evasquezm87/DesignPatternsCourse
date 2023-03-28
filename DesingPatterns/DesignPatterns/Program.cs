@@ -1,5 +1,6 @@
 ﻿using DesignPatterns.FactoryPattern;
 using DesignPatterns.Singleton;
+using DesignPatterns.DependencyInjection;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,12 +15,26 @@ namespace DesignPatterns
         static void Main(string[] args)
         {
             //singleton();
-            Fabric();
-            FabricBancos();
+            //Fabric();
+            //FabricBancos();
+            DependencyBeer();
             Console.ReadLine();
 
 
           
+        }
+
+        static void DependencyBeer()
+        {
+            //Se le quita la responsabilidad de crear el objeto
+            //La clase beer es la resonable de crearla no la clase Drink
+            //DrinkWithBeer bebida = new DrinkWithBeer(14, 10);
+			Beer beer = new Beer("Negra modelo", "Modelo");
+            DrinkWithBeer bebida = new DrinkWithBeer(14, 10, beer);
+
+
+			bebida.Build(); 
+
         }
 
         static void FabricBancos()

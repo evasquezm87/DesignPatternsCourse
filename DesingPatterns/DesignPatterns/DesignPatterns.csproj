@@ -59,6 +59,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DependencyInjection\Beer.cs" />
+    <Compile Include="DependencyInjection\DrinkWithBeer.cs" />
     <Compile Include="FactoryPattern\ContenidoDetalleFactory.cs" />
     <Compile Include="FactoryPattern\Factory.cs" />
     <Compile Include="Program.cs" />

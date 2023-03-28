@@ -64,7 +64,7 @@ Fabrica creadora de objetos
 
 Se requiere de una clase abstracta
 
-Participantes:
+Entidades:
 Creator .- Clase Abstracta que heredaran clases de esta
 ConcreteCreator.- Clase que hereda de Creator y que es la que crera los productos, es la que tiene la responsabilidad de la creación
 Product.- Interfaz que va a categorizar los productos que se van a crear
@@ -73,3 +73,35 @@ ConcreteProducto.- Es la clase que crea los objetos, es la que se va a utilizar 
 Ventajas, 
 la responsabilidad de la crecion del objeto va a estar en la fabrica, solamente en un lado se crea el objeto, en caso de un cambio solo se cambia ahi
 se puede tener objetos parecidos que se categorizan en la interfaz product
+
+Ayuda cuando no se saben factores externos aun, cuando cliente decide agregar nuevos factores, 
+
+2 Instancias generales
+Fabrica (Creator)
+Producto a crear
+
+2 Interfaces
+Para dar orden y categorizar 
+Una para categorizar los productos creados
+Otra para categorizar las fabricas creadoras
+
+
+Tiene otra implementacion por medio del switch case, pero con el ejemplo mostrado es mas claro
+
+
+Inyección de dependencias
+Utilizado comunmente en frameworks actuales,
+por lo general los frameworks ya tienen forma de implementarlos
+
+trata sobre quitarle a una clase la responsabilidad de crear objetos apartir de otras clases
+Es decir puede crear objetos pero no tiene que saber como se crean.
+
+El objeto se le inyecta una vez creado
+
+Se pueden inyectar en un metodo o en su constructor, por lo general en ASP se inyectan en el cosntructor
+
+REsuelve un prinicipio SOlid, Inversion Dependendia
+no s edebe depender de implementaciones pero si de abstracciones
+
+La clase no debe depender de implementaciones
+
