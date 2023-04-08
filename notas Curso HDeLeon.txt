@@ -105,3 +105,41 @@ no s edebe depender de implementaciones pero si de abstracciones
 
 La clase no debe depender de implementaciones
 
+
+
+Patron Repositorio
+
+Entity Framework
+
+Pasos para trabajar con EntityFramework
+
+Se instalan 2 paquetes
+Paso 1 
+EntityFramework.core.SQL
+Contiene las librerias escenciales para trabajar con SQL Server
+
+Paso 2
+EntityFramework.Tool
+Contiene las librerias para trabajar con las herramientas de SQL Server
+
+Revisar que la version del EntityFramework sea compatible con la version de .Net del destino de la aplicacion
+
+DBFirst. cuando la BD ya existe 
+CodeFirst.- Cuando se crea la BD desde el codigo
+
+Paso 3
+Ejecutar el comando que creara el mapeo de clases con las tablas de SQL Server
+Se ejecuta el comando "Scaffold-DbContext", se le pasa la cadena de conexión, se le llama el parametro del comando "-OutputDir" indicando la ruta
+donde se colocaran los archivos de clases
+Scaffold-DbContext "server=velam987.mssql.somee.com;packet size=4096;user id=velam987_SQLLogin_1;pwd=915qzod1lf;
+
+Crea al menos 2 archivoos de clases
+1.- Con la tabla o tablas que esten en la Conexión, se crea una clase con sus propiedades
+2.-El archivo de DBContext, aqui se crea el contexto con el que se trabajara, aqui se coloca la cadena de conexión, por lo que 
+aqui se tendria que reemplazar para dejarla en un archivo y ademas que este encriptada
+
+
+data source=velam987.mssql.somee.com;persist security info=False;initial catalog=velam987" Microsoft.EntityFrameworkCore.SqlServer -OutputDir Models
+
+
+
