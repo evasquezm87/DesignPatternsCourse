@@ -34,13 +34,9 @@ namespace DesignPatterns_Net50.Models
 
             modelBuilder.Entity<Beer>(entity =>
             {
-                entity.HasNoKey();
-
                 entity.ToTable("Beer");
 
-                entity.Property(e => e.BeerId)
-                    .ValueGeneratedOnAdd()
-                    .HasColumnName("BeerID");
+                entity.Property(e => e.BeerId).HasColumnName("BeerID");
 
                 entity.Property(e => e.Name)
                     .HasMaxLength(50)
