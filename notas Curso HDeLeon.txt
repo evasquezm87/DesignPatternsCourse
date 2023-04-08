@@ -132,14 +132,42 @@ Ejecutar el comando que creara el mapeo de clases con las tablas de SQL Server
 Se ejecuta el comando "Scaffold-DbContext", se le pasa la cadena de conexión, se le llama el parametro del comando "-OutputDir" indicando la ruta
 donde se colocaran los archivos de clases
 Scaffold-DbContext "server=velam987.mssql.somee.com;packet size=4096;user id=velam987_SQLLogin_1;pwd=915qzod1lf;
+data source=velam987.mssql.somee.com;persist security info=False;initial catalog=velam987" Microsoft.EntityFrameworkCore.SqlServer -OutputDir Models
 
 Crea al menos 2 archivoos de clases
 1.- Con la tabla o tablas que esten en la Conexión, se crea una clase con sus propiedades
 2.-El archivo de DBContext, aqui se crea el contexto con el que se trabajara, aqui se coloca la cadena de conexión, por lo que 
 aqui se tendria que reemplazar para dejarla en un archivo y ademas que este encriptada
 
+El contexto es como la clase padre para trabajar con entity framework, es quien tendra las colecciones de la tabla
 
-data source=velam987.mssql.somee.com;persist security info=False;initial catalog=velam987" Microsoft.EntityFrameworkCore.SqlServer -OutputDir Models
+
+Patron Repositorio
+
+Es cuando se tienen diferentes fuentes de datos, las fuentes de datos pueden ser:
+-Base de Datos
+-ORM
+-API
+-Archivo
+-Cache
+
+El patron Esructural repositorio es un intermediario para esta información, en la cual la aplicacion
+no tiene porque saber de donde vienen los datos.
+
+Solo invoca un metodo y no le importe de donde viene el origen
+
+implementación: tiene varias formas
+
+Ejemplo:
+
+La interfaz es util en este patron porque solo se va a tener un solo metodo.
+
+Generics, 
+hacer que una clase se comporte igual para distintas fuentes de modelos
+Para no tener que hacer muchos arcivos, es decir que no todas las tavlas se tiene que crear
+solo algunas, el modelado es que indica como se aplica
+
+
 
 
 

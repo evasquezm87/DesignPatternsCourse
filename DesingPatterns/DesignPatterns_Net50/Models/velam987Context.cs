@@ -17,7 +17,9 @@ namespace DesignPatterns_Net50.Models
         {
         }
 
+        //El DbSet da el potencial de trabajr con Generics
         public virtual DbSet<Beer> Beers { get; set; }
+        public virtual DbSet<Brand> Brands { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -43,6 +45,15 @@ namespace DesignPatterns_Net50.Models
                     .IsUnicode(false);
 
                 entity.Property(e => e.Style)
+                    .HasMaxLength(50)
+                    .IsUnicode(false);
+            });
+
+            modelBuilder.Entity<Brand>(entity =>
+            {
+                entity.ToTable("Brand");
+
+                entity.Property(e => e.Name)
                     .HasMaxLength(50)
                     .IsUnicode(false);
             });

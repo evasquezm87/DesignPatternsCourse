@@ -11,11 +11,60 @@ namespace DesignPatterns_Net50
 		static void Main(string[] args)
 		{
 			//efRepository();
-			efRepositoryContext();
-			
+			//efRepositoryContext();
+			//efRepositoryGenerics();
+			//efRepositoryGenericsTableBrand();
+			efRepositoryGenericsDelete();
 			Console.ReadLine();
 		}
 
+		private static void efRepositoryGenerics()
+		{
+			using (var context = new velam987Context())
+			{
+				//Insertar a tabla Beer
+				var beerRepository = new Repository<Beer>(context);
+				var beer = new Beer() { Name = "Fuller", Style = "Stringe Ale" };
+				beerRepository.Add(beer); 
+				beerRepository.Save();
+
+				foreach(var b in beerRepository.Get())
+				{
+					Console.WriteLine(b.BeerId + " - " + b.Name);
+				}
+			}
+		}
+		private static void efRepositoryGenericsDelete()
+		{
+			using (var context = new velam987Context())
+			{
+				//Insertar a tabla Beer
+				var beerRepository = new Repository<Beer>(context);
+				beerRepository.Delete(4);
+				beerRepository.Save();
+
+				foreach (var b in beerRepository.Get())
+				{
+					Console.WriteLine(b.BeerId + " - " + b.Name);
+				}
+			}
+		}
+		private static void efRepositoryGenericsTableBrand()
+		{
+			using (var context = new velam987Context())
+			{
+				//Insertar a tabla Beer
+				var beerRepository = new Repository<Brand>(context);
+				var beer = new Brand() { Name = "Fuller"};
+				beerRepository.Add(beer);
+				beerRepository.Save();
+
+				foreach (var b in beerRepository.Get())
+				{
+					Console.WriteLine(b.BrandId + " - " + b.Name);
+				}
+			}
+		}
 		private static void efRepositoryContext()
 		{
 			//SE crea el contexto
